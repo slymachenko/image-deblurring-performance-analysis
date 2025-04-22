@@ -44,7 +44,7 @@ The project is done assuming the following structure of the `data/` directory:
 │   └── images/
 │       ├── blurred/
 │       ├── deblurred/
-│       └── orignal/
+│       └── original/
 ```
 
 where:
