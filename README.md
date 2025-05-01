@@ -9,6 +9,12 @@ In the field of image processing, the degradation of image quality due to variou
 
 ## Getting Started
 
+### Dataset
+
+Dataset is availiable on [[HuggingFace]](https://huggingface.co/datasets/slymachenko/image-deblurring-performance-analysis)
+
+### Dataset creation and analysis
+
 > [!NOTE]
 > Please make sure you have [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) installed on your system.
 
@@ -26,32 +32,13 @@ In the field of image processing, the degradation of image quality due to variou
     conda activate image_deblurring_performance_analysis
     ```
 
-3. Run the desired script/notebook in the conda environment.
+3. Download dataset from HuggingFace: [[Link]](https://huggingface.co/datasets/slymachenko/image-deblurring-performance-analysis)
+
+4. Run the desired script/notebook in the conda environment.
 
 ## Dataset creation
 
-To create our dataset we took a test subset (1250 images) of [HQ-50K: A Large-scale, High-quality Dataset for Image Restoration](https://github.com/littleYaang/HQ-50K).
-
-The project is done assuming the following structure of the `data/` directory:
-
-```text
-.
-├── data/
-│   ├── HQ-50k/
-│   │   ├── test/
-│   │   └── train
-│   ├── image_deblurring_dataset.csv
-│   └── images/
-│       ├── blurred/
-│       ├── deblurred/
-│       └── original/
-```
-
-where:
-
-- `HQ-50k/`: [HQ-50K: A Large-scale, High-quality Dataset for Image Restoration](https://github.com/littleYaang/HQ-50K)
-- `image_deblurring_dataset.csv`: Dataset that contains the following: Image Metadata, Blur Parameters, Performance Metrics
-- `images/`: Downloaded images, separated into its category (original, blurred, deblurred)
+To create our dataset we used a test subset (1250 images) of [HQ-50K: A Large-scale, High-quality Dataset for Image Restoration](https://github.com/littleYaang/HQ-50K).
 
 ## License
 
