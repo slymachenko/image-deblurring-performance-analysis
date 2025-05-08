@@ -1,2 +1,4 @@
-dataset/
 local/
+data/
+__pycache__
+*.log
