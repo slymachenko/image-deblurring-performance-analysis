@@ -1,0 +1,1 @@
+from .image_characteristic_extraction import *
