@@ -1,6 +1,0 @@
-[submodule "external/MPRNet"]
-	path = external/MPRNet
-	url = https://github.com/swz30/MPRNet.git
-[submodule "external/DeblurGANv2"]
-	path = external/DeblurGANv2
-	url = https://github.com/VITA-Group/DeblurGANv2.git
