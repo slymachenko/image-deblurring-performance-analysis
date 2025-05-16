@@ -1,4 +1,13 @@
-local/
+# general
 data/
-__pycache__
+local/
+.env
 *.log
+
+# packages
+__pycache__/
+*.egg-info/
+
+# environments
+envs/
+.venv
