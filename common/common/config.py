@@ -44,7 +44,7 @@ TEST_BLURRED_MOTION_DIR = TEST_BLURRED_DIR / "motion"
 # BLUR PARAMETERS
 BLUR_TYPES = ['box', 'gaussian', 'motion']
 BLUR_PARAM_RANGES = {
-    'box': {'kernel_size': (5, 15)},
+    'box': {'size': (5, 15)},
     'gaussian': {'size': (5, 21),'sigma': (0.5, 4.0)},
     'motion': {'length': (5, 30), 'angle': (0, 360)},
 }
