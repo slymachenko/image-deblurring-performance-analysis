@@ -4,7 +4,7 @@ from ..base import Deblurrer
 
 class PseudoInverseDeblurrer(Deblurrer):
     def __init__(self, regularization_lambda: float = 1e-3, kernel_size: int = 10):
-        self.name = "PseudoInverse"
+        self.name = "pseudo_inverse"
         self.regularization_lambda = regularization_lambda
         self.kernel_size = kernel_size
 

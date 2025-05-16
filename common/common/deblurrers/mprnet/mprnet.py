@@ -9,7 +9,7 @@ from .Deblurring.MPRNet import MPRNet
 
 class MPRNetDeblurrer:
     def __init__(self, weights_path: str):
-        self.name = "MPRNet"
+        self.name = "mprnet"
         self.img_mul_of = 8
 
         # Initialize the model

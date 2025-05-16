@@ -4,7 +4,7 @@ from ..base import Deblurrer
 
 class WienerDeblurrer(Deblurrer):
     def __init__(self, K: float = 1e-3, kernel_size: int = 10):
-        self.name = "Wiener"
+        self.name = "wiener"
         self.K = K
         self.kernel_size = kernel_size
 

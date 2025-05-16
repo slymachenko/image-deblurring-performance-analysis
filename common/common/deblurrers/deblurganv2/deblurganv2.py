@@ -8,7 +8,7 @@ import functools
 
 class DeblurGANv2Deblurrer:
     def __init__(self, weights_path: str):
-        self.name = "DeblurGANv2"
+        self.name = "deblurganv2"
 
         # Define normalization layer for instance normalization
         def get_norm_layer(norm_type='instance'):
