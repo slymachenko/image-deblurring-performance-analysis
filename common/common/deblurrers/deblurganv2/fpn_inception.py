@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 from pretrainedmodels import inceptionresnetv2
-from torchsummary import summary
 import torch.nn.functional as F
 
 class FPNHead(nn.Module):
