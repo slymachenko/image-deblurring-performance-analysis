@@ -5,11 +5,13 @@ import numpy as np
 from collections import OrderedDict
 
 from .Deblurring.MPRNet import MPRNet
+from ..deblurrer import Deblurrer
 
-
-class MPRNetDeblurrer:
+class MPRNetDeblurrer(Deblurrer):
     def __init__(self, weights_path: str):
-        self.name = "mprnet"
+        super().__init__(
+            name="mprnet"
+        )
         self.img_mul_of = 8
 
         # Initialize the model
@@ -18,9 +20,6 @@ class MPRNetDeblurrer:
 
         self._load_checkpoint(self.model, weights_path)
         self.model.eval()
-
-    def get_name(self) -> str:
-        return self.name
 
     def deblur(self, image):
         input_ = TF.to_tensor(image).unsqueeze(0).cuda()

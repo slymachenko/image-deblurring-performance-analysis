@@ -3,12 +3,16 @@ import torch.nn as nn
 import numpy as np
 import cv2
 import albumentations as albu
-from .fpn_inception import FPNInception
 import functools
 
-class DeblurGANv2Deblurrer:
+from .fpn_inception import FPNInception
+from ..deblurrer import Deblurrer
+
+class DeblurGANv2Deblurrer(Deblurrer):
     def __init__(self, weights_path: str):
-        self.name = "deblurganv2"
+        super().__init__(
+            name="deblurganv2"
+        )
 
         # Define normalization layer for instance normalization
         def get_norm_layer(norm_type='instance'):
@@ -24,9 +28,6 @@ class DeblurGANv2Deblurrer:
 
         # Define normalization function
         self.normalize = albu.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
-
-    def get_name(self) -> str:
-        return self.name
 
     def deblur(self, img) -> None:
         h, w, _ = img.shape

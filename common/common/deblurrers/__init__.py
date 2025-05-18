@@ -3,4 +3,5 @@ from .wiener import WienerDeblurrer
 from .deblurganv2 import DeblurGANv2Deblurrer
 from .mprnet import MPRNetDeblurrer
 
-from .base import Deblurrer
+from .deblurrer import Deblurrer
+from .classical_deblurrer import ClassicalDeblurrer
