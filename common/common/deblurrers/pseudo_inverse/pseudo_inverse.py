@@ -5,7 +5,7 @@ from ..classical_deblurrer import ClassicalDeblurrer
 
 class PseudoInverseDeblurrer(ClassicalDeblurrer):
     def __init__(self, alpha: float = 1e-2):
-        super().__init__(name="pseudo_inverse")
+        super().__init__(name="pseudoinverse")
         self.alpha = alpha
 
     def _calculate_filter(self, image_dim: Tuple[int], kernel: np.ndarray) -> np.ndarray:
