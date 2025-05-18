@@ -51,3 +51,13 @@ BLUR_PARAM_RANGES = {
 
 # DEBLUR PARAMETERS
 DEBLUR_MODELS = ['pseudo_inverse', 'wiener', 'deblurganv2', 'mprnet']
+
+# IMAGRE FEATURES EXTRACTION PARAMETERS
+GAUSSIAN_PARAMS = {
+    'ksize': (3, 3),
+    'sigma': 1.0
+}
+
+SOBEL_PARAMS = {
+    'ksize': 3
+}
