@@ -19,10 +19,11 @@ class MPRNetDeblurrer(Deblurrer):
         self.model.cuda()
 
         self._load_checkpoint(self.model, weights_path)
-        self.model.eval()
+        # self.model.eval()
+        self.model.train(True).half()
 
-    def deblur(self, image):
-        input_ = TF.to_tensor(image).unsqueeze(0).cuda()
+    def deblur(self, image: np.ndarray) -> np.ndarray:
+        input_ = TF.to_tensor(image).unsqueeze(0).cuda().half()
 
         # Pad the input if not_multiple_of 8
         h,w = input_.shape[2], input_.shape[3]

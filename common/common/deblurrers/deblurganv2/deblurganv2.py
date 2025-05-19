@@ -29,19 +29,19 @@ class DeblurGANv2Deblurrer(Deblurrer):
         # Define normalization function
         self.normalize = albu.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
 
-    def deblur(self, img) -> None:
-        h, w, _ = img.shape
+    def deblur(self, image: np.ndarray) -> np.ndarray:
+        h, w, _ = image.shape
 
         # Preprocess: Normalize and pad the image
-        img = self.normalize(image=img)['image']
+        image = self.normalize(image=image)['image']
         block_size = 32
         min_height = (h // block_size + 1) * block_size if h % block_size != 0 else h
         min_width = (w // block_size + 1) * block_size if w % block_size != 0 else w
-        img_padded = np.pad(img, ((0, min_height - h), (0, min_width - w), (0, 0)), 
+        image_padded = np.pad(image, ((0, min_height - h), (0, min_width - w), (0, 0)), 
                            mode='constant', constant_values=0)
 
         # Convert to tensor
-        x = np.transpose(img_padded, (2, 0, 1))  # HWC to CHW
+        x = np.transpose(image_padded, (2, 0, 1))  # HWC to CHW
         x = np.expand_dims(x, 0)  # Add batch dimension
         x = torch.from_numpy(x).float().cuda()
 
