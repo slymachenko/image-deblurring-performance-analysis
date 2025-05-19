@@ -19,7 +19,7 @@ PSEUDOINVERSE_WKERNEL_DATASET = IDPA_DIR / "pseudoinverse_wkernel.parquet"
 WIENER_NOKERNEL_DATASET = IDPA_DIR / "wiener_nokernel.parquet"
 WIENER_WKERNEL_DATASET = IDPA_DIR / "wiener_wkernel.parquet"
 DEBLURGANV2_DATASET = IDPA_DIR / "deblurganv2.parquet"
-MPRNET_WKERNEL_DATASET = IDPA_DIR / "mprnet.parquet"
+MPRNET_DATASET = IDPA_DIR / "mprnet.parquet"
 
 # train/
 TRAIN_DIR = IDPA_DIR / "train"
