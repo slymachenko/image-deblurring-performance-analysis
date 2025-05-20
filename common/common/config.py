@@ -37,13 +37,9 @@ TEST_ORIGINAL_DIR = TEST_DIR / "original"
 TEST_BLURRED_DIR = TEST_DIR / "blurred"
 TEST_DEBLURRED_DIR = TEST_DIR / "deblurred"
 
-TEST_BLURRED_BOX_DIR = TEST_BLURRED_DIR / "box"
-TEST_BLURRED_GAUSSIAN_DIR = TEST_BLURRED_DIR / "gaussian"
-TEST_BLURRED_MOTION_DIR = TEST_BLURRED_DIR / "motion"
-
 # BLUR PARAMETERS
 BLUR_PARAM_RANGES = {
-    'box': {'kernel_size': (5, 15)},
-    'gaussian': {'size': (5, 21),'sigma': (0.5, 4.0)},
-    'motion': {'length': (5, 30), 'angle': (0, 360)},
+    'box': {'size': (5, 15, int)},
+    'gaussian': {'size': (5, 21, int),'sigma': (0.5, 4.0, float)},
+    'motion': {'length': (5, 30, int), 'angle': (0, 360, float)},
 }
