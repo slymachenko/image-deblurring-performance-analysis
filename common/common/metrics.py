@@ -103,7 +103,6 @@ def calculate_lpips(
 def calculate_gmsd(
     img1_np: np.ndarray,
     img2_np: np.ndarray,
-    data_range: float = None
     ) -> float:
     """
     Calculate Gradient Magnitude Similarity Deviation (GMSD) between two images.
@@ -111,7 +110,6 @@ def calculate_gmsd(
     Args:
         img1_np: First image as a numpy array (H, W, C) or (H, W).
         img2_np: Second image as a numpy array (H, W, C) or (H, W).
-        data_range: The data range of the input images. If None, it is determined from the image dtype.
 
     Returns:
         float: GMSD score (lower means more similar).
@@ -121,11 +119,6 @@ def calculate_gmsd(
         if img.ndim == 3 and img.shape[2] == 3:
             return np.dot(img[..., :3], [0.299, 0.587, 0.114])
         return img
-
-    if data_range is None:
-        dmin = min(img1_np.min(), img2_np.min())
-        dmax = max(img1_np.max(), img2_np.max())
-        data_range = dmax - dmin
 
     img1 = to_gray(img1_np.astype(np.float32))
     img2 = to_gray(img2_np.astype(np.float32))
