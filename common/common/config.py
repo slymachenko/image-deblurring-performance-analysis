@@ -14,6 +14,12 @@ HQ50K_TRAIN_SAMPLE_DATASET = HQ50K_TRAIN_DIR / "sample.parquet"
 
 # image-deblurring-performance-analysis/
 IDPA_DATASET = IDPA_DIR / "image_deblurring_dataset.parquet"
+PSEUDOINVERSE_NOKERNEL_DATASET = IDPA_DIR / "pseudoinverse_nokernel.parquet"
+PSEUDOINVERSE_WKERNEL_DATASET = IDPA_DIR / "pseudoinverse_wkernel.parquet"
+WIENER_NOKERNEL_DATASET = IDPA_DIR / "wiener_nokernel.parquet"
+WIENER_WKERNEL_DATASET = IDPA_DIR / "wiener_wkernel.parquet"
+DEBLURGANV2_DATASET = IDPA_DIR / "deblurganv2.parquet"
+MPRNET_DATASET = IDPA_DIR / "mprnet.parquet"
 
 # train/
 TRAIN_DIR = IDPA_DIR / "train"
@@ -37,9 +43,27 @@ TEST_ORIGINAL_DIR = TEST_DIR / "original"
 TEST_BLURRED_DIR = TEST_DIR / "blurred"
 TEST_DEBLURRED_DIR = TEST_DIR / "deblurred"
 
+TEST_BLURRED_BOX_DIR = TEST_BLURRED_DIR / "box"
+TEST_BLURRED_GAUSSIAN_DIR = TEST_BLURRED_DIR / "gaussian"
+TEST_BLURRED_MOTION_DIR = TEST_BLURRED_DIR / "motion"
+
 # BLUR PARAMETERS
+BLUR_TYPES = ['box', 'gaussian', 'motion']
 BLUR_PARAM_RANGES = {
-    'box': {'size': (5, 15, int)},
-    'gaussian': {'size': (5, 21, int),'sigma': (0.5, 4.0, float)},
-    'motion': {'length': (5, 30, int), 'angle': (0, 360, float)},
+    'box': {'size': (5, 15)},
+    'gaussian': {'size': (5, 21),'sigma': (0.5, 4.0)},
+    'motion': {'length': (5, 30), 'angle': (0, 360)},
+}
+
+# DEBLUR PARAMETERS
+DEBLUR_MODELS = ['pseudo_inverse', 'wiener', 'deblurganv2', 'mprnet']
+
+# IMAGRE FEATURES EXTRACTION PARAMETERS
+GAUSSIAN_PARAMS = {
+    'ksize': (3, 3),
+    'sigma': 1.0
+}
+
+SOBEL_PARAMS = {
+    'ksize': 3
 }
