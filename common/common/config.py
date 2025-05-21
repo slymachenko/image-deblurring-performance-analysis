@@ -14,6 +14,12 @@ HQ50K_TRAIN_SAMPLE_DATASET = HQ50K_TRAIN_DIR / "sample.parquet"
 
 # image-deblurring-performance-analysis/
 IDPA_DATASET = IDPA_DIR / "image_deblurring_dataset.parquet"
+PSEUDOINVERSE_NOKERNEL_DATASET = IDPA_DIR / "pseudoinverse_nokernel.parquet"
+PSEUDOINVERSE_WKERNEL_DATASET = IDPA_DIR / "pseudoinverse_wkernel.parquet"
+WIENER_NOKERNEL_DATASET = IDPA_DIR / "wiener_nokernel.parquet"
+WIENER_WKERNEL_DATASET = IDPA_DIR / "wiener_wkernel.parquet"
+DEBLURGANV2_DATASET = IDPA_DIR / "deblurganv2.parquet"
+MPRNET_DATASET = IDPA_DIR / "mprnet.parquet"
 
 # train/
 TRAIN_DIR = IDPA_DIR / "train"
