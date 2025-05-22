@@ -53,3 +53,7 @@ BLUR_PARAM_RANGES = {
     'gaussian': {'size': (5, 21),'sigma': (0.5, 4.0)},
     'motion': {'length': (5, 30), 'angle': (0, 360)},
 }
+
+# LISTS
+METRIC_TYPES = ['proctime', 'ssim', 'psnr', 'lpips', 'gmsd']
+BLUR_TYPES = ['box', 'gaussian', 'motion']
