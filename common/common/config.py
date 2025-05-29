@@ -6,6 +6,8 @@ DATA_DIR = ROOT / "data"
 HQ50K_DIR = DATA_DIR / "HQ-50K"
 IDPA_DIR = DATA_DIR / "image-deblurring-performance-analysis"
 
+DEMO_IMAGE_KEY = "000000845"
+
 # HQ-50k/
 HQ50K_TEST_DIR = HQ50K_DIR / "test"
 HQ50K_TRAIN_DIR = HQ50K_DIR / "train"

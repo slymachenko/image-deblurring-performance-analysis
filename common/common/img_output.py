@@ -36,7 +36,7 @@ def get_deblurred(key: str, method: str, blur_type: str, split: str = "test"):
     return matches
 
 def show_comparison(key: str, method: str, blur_types: List[str], cropped=False):
-     for blur_type in blur_types:
+    for blur_type in blur_types:
         original = mpimg.imread(get_original(key))
         blurred = mpimg.imread(get_blurred(key, blur_type))
         deblurred_paths = get_deblurred(key, method, blur_type)
@@ -72,3 +72,24 @@ def show_comparison(key: str, method: str, blur_types: List[str], cropped=False)
             axes[i].set_title(el["title"])
             axes[i].axis('off')
         plt.show()
+
+def show_image(key: str, blur_type: str = None, method: str = None):
+    path = None
+    name = f"Image {key}"
+
+    if blur_type:
+        if method:
+            path = get_deblurred(key, method, blur_type)
+            name += f" ({method}, {blur_type})"
+        else:
+            path = get_blurred(key, blur_type)
+            name += f" ({blur_type})"
+    else:
+        path = get_original(key)
+
+    image = mpimg.imread(path)
+
+    plt.imshow(image)
+    plt.title(f"Image {key}")
+    plt.axis('off')
+    plt.show()
