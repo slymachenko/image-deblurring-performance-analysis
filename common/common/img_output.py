@@ -79,7 +79,7 @@ def show_image(key: str, blur_type: str = None, method: str = None):
 
     if blur_type:
         if method:
-            path = get_deblurred(key, method, blur_type)
+            path = get_deblurred(key, method, blur_type)[0]
             name += f" ({method}, {blur_type})"
         else:
             path = get_blurred(key, blur_type)
