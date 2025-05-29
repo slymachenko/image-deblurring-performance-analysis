@@ -40,6 +40,13 @@ Dataset is availiable on [[HuggingFace]](https://huggingface.co/datasets/slymach
 
 To create our dataset we used a test subset (1250 images) of [HQ-50K: A Large-scale, High-quality Dataset for Image Restoration](https://github.com/littleYaang/HQ-50K).
 
+## Credits
+
+Parts of this project were inspired by or copied from the following sources:
+
+- [MPRNet repository](https://github.com/swz30/MPRNet)
+- [DeblurGAN-v2 repository](https://github.com/VITA-Group/DeblurGANv2)
+
 ## License
 
 The project is released under the [MIT license](LICENSE).

@@ -50,12 +50,25 @@ TEST_BLURRED_GAUSSIAN_DIR = TEST_BLURRED_DIR / "gaussian"
 TEST_BLURRED_MOTION_DIR = TEST_BLURRED_DIR / "motion"
 
 # BLUR PARAMETERS
+BLUR_TYPES = ['box', 'gaussian', 'motion']
 BLUR_PARAM_RANGES = {
-    'box': {'kernel_size': (5, 15)},
+    'box': {'size': (5, 15)},
     'gaussian': {'size': (5, 21),'sigma': (0.5, 4.0)},
     'motion': {'length': (5, 30), 'angle': (0, 360)},
 }
 
 # LISTS
 METRIC_TYPES = ['proctime', 'ssim', 'psnr', 'lpips', 'gmsd']
-BLUR_TYPES = ['box', 'gaussian', 'motion']
+
+# DEBLUR PARAMETERS
+DEBLUR_MODELS = ['pseudo_inverse', 'wiener', 'deblurganv2', 'mprnet']
+
+# IMAGRE FEATURES EXTRACTION PARAMETERS
+GAUSSIAN_PARAMS = {
+    'ksize': (3, 3),
+    'sigma': 1.0
+}
+
+SOBEL_PARAMS = {
+    'ksize': 3
+}
