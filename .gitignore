@@ -1,6 +1,7 @@
 # general
 data/
 local/
+figures/
 .env
 *.log
 

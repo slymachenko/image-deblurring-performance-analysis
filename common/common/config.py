@@ -2,6 +2,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 DATA_DIR = ROOT / "data"
+FIGURES_DIR = ROOT / "figures"
 
 HQ50K_DIR = DATA_DIR / "HQ-50K"
 IDPA_DIR = DATA_DIR / "image-deblurring-performance-analysis"
