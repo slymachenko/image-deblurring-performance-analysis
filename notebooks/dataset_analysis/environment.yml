@@ -8,3 +8,5 @@ dependencies:
   - pyarrow=20.0.0
   - scipy=1.15.2
   - seaborn=0.13.2
+  - ipykernel=6.29.5
+  - opencv=4.11.0
