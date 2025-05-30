@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import re
 
-from common.config import IDPA_DIR
+from common.config import IDPA_DIR, FIGURES_DIR
 
 from typing import List
 
@@ -35,7 +35,13 @@ def get_deblurred(key: str, method: str, blur_type: str, split: str = "test"):
 
     return matches
 
-def show_comparison(key: str, method: str, blur_types: List[str], cropped=False):
+def show_comparison(
+        key: str,
+        method: str,
+        blur_types: List[str],
+        cropped: bool = False,
+        is_save: bool = False
+):
     for blur_type in blur_types:
         original = mpimg.imread(get_original(key))
         blurred = mpimg.imread(get_blurred(key, blur_type))
@@ -64,7 +70,7 @@ def show_comparison(key: str, method: str, blur_types: List[str], cropped=False)
                 "image": img
             })
 
-        _, axes = plt.subplots(1, len(images), figsize=(5 * len(images), 5))
+        fig, axes = plt.subplots(1, len(images), figsize=(5 * len(images), 5))
         if len(images) == 1:
             axes = [axes]
         for i, el in enumerate(images):
@@ -72,6 +78,11 @@ def show_comparison(key: str, method: str, blur_types: List[str], cropped=False)
             axes[i].set_title(el["title"])
             axes[i].axis('off')
         plt.show()
+
+        if is_save:
+            save_dir = FIGURES_DIR / "comparisons"
+            save_dir.mkdir(parents=True, exist_ok=True)
+            fig.savefig(save_dir / f"{key}.png", bbox_inches='tight')
 
 def show_image(key: str, blur_type: str = None, method: str = None):
     path = None
