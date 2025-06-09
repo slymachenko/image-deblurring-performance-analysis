@@ -82,7 +82,7 @@ def show_comparison(
         if is_save:
             save_dir = FIGURES_DIR / "comparisons"
             save_dir.mkdir(parents=True, exist_ok=True)
-            fig.savefig(save_dir / f"{key}.png", bbox_inches='tight')
+            fig.savefig(save_dir / f"{key}_{method}_{blur_type}_{"cropped" if cropped else ""}.png", bbox_inches='tight')
 
 def show_image(key: str, blur_type: str = None, method: str = None):
     path = None
