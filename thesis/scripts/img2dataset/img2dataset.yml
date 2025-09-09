@@ -1,0 +1,8 @@
+name: img2dataset
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9.22
+  - ipykernel=6.29.5
+variables:
+  NO_ALBUMENTATIONS_UPDATE: '1'
