@@ -34,11 +34,12 @@ Dataset is availiable on [[HuggingFace]](https://huggingface.co/datasets/slymach
     conda activate idpa-analysis
     ```
 
-3. Download dataset from HuggingFace: [[Link]](https://huggingface.co/datasets/slymachenko/image-deblurring-performance-analysis)
+3. Download dataset to directory `data/`:
 
-    Follow the file structure of the HuggingFace repository with the root of it being `data/image-deblurring-performance-analysis/`
+    - For *Dataset Creation* part: [[HQ-50K HuggingFace]](https://huggingface.co/datasets/YangQiee/HQ-50K)
+    - For *Dataset Analysis* part: [[IDPA HuggingFace]](https://huggingface.co/datasets/slymachenko/image-deblurring-performance-analysis)
 
-4. Run the desired script/notebook in the conda environment.
+4. Run the desired script/notebook in the respective conda environment.
 
 ## Credits
 
@@ -46,6 +47,7 @@ Parts of this project were inspired by or copied from the following sources:
 
 - [MPRNet repository](https://github.com/swz30/MPRNet)
 - [DeblurGAN-v2 repository](https://github.com/VITA-Group/DeblurGANv2)
+- [HQ-50K Dataset](https://huggingface.co/datasets/YangQiee/HQ-50K)
 
 ## License
 
